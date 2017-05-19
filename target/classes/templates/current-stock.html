@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <link href="styles.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<header> Welcome to Toner Stock </header>
+<h1>Current Stock</h1>
+<div id="mynav" align="center">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="add-buyer.html">Add Buyer</a></li>
+        <li><a href="add-manager.html">Add Manager</a></li>
+        <li><a href="current-stock.html">Current Stock</a></li>
+        <li><a href="transactions.html">Transactions</a></li>
+        <li><a href="orders">Order Form</a></li>
+    </ul>
+</div>
+<div>
+    <div id="stock-form" align="center">
+        <form th:action="@{/saveToner}" th:object="${toner}" method="post">
+        <table>
+            <td><label>Item Name: </label></td>
+            <td><input type="text" th:field="*{tonerName}"/></td>
+            <td><label>Set Price: </label></td>
+            <td><input type="text" th:field="*{tonerPrice}"/></td>
+            <td><label>Quantity to add to stock: </label></td>
+            <td><input type="text" th:field="*{tonerQuantity}"/></td>
+            <td><input type="submit" value="Add"/></td>
+        </table>
+    </form>
+    </div>
+</div>
+    <div>
+        <table id="stock-table" align="center" border="1">
+            <tr>
+            <th>Item ID</th>
+            <th>Item Name</th>
+            <th>Price</th>
+            <th>Amount in Stock</th>
+            </tr>
+            <tr th:each="toner : ${toners}">
+                <td th:text="${toner.id}"></td>
+                <td th:text="${toner.tonerName}"></td>
+                <td th:text="${toner.tonerPrice}"></td>
+                <td th:text="${toner.tonerQuantity}"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

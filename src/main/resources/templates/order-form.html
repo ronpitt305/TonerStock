@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <link href="styles.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<header> Welcome to Toner Stock </header>
+<h1>Order Forms</h1>
+<div id="mynav" align="center">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="add-buyer">Add Buyer</a></li>
+        <li><a href="add-manager">Add Manager</a></li>
+        <li><a href="current-stock">Current Stock</a></li>
+        <li><a href="transactions">Transactions</a></li>
+        <li><a href="orders">Order Form</a></li>
+    </ul>
+</div>
+<datalist>
+         <form>
+        <select name="buyerId">
+        <option th:each="buyer : ${buyers}"
+                th:text="${buyer.firstName}"
+                th:value="${buyer.buyerId}">
+        </option>
+        </select>
+        </form>
+        <form>
+            <select name="tonerID">
+                <option th:each="toner : ${toners}"
+                        th:text="${toner.tonerName}"
+                        th:value="${toner.id}">
+        </option>
+        </select>
+        </form>
+</datalist>
+</body>
+</html>
