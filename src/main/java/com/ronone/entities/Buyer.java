@@ -11,7 +11,7 @@ public class Buyer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "BUYER_ID")
-    private int buyerId;
+    private Long buyerId;
 
     @Column(name = "FIRST_NAME")
     private String firstName;
@@ -25,6 +25,10 @@ public class Buyer {
     @OneToMany(targetEntity = OrderForm.class,cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "buyer")
     private List<OrderForm> orders;
 
+    @OneToOne
+    @JoinColumn(name = "TRANS_NUMBER")
+    private Balances balances;
+
     public Buyer(){}
 
     public Buyer(String firstName, String lastName, String buyerAddress, Set<Toner> buyerToner) {
@@ -33,11 +37,12 @@ public class Buyer {
         this.buyerAddress = buyerAddress;
     }
 
-    public int getBuyerId() {
+
+    public Long getBuyerId() {
         return buyerId;
     }
 
-    public void setBuyerId(int buyerId) {
+    public void setBuyerId(Long buyerId) {
         this.buyerId = buyerId;
     }
 

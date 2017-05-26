@@ -7,13 +7,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @Transactional
-public interface BuyerDAO extends CrudRepository<Buyer, Integer> {
+public interface BuyerDAO extends CrudRepository<Buyer, Long> {
 
     @Override
-    Iterable<Buyer> findAll(Iterable<Integer> iterable);
+    Iterable<Buyer> findAll(Iterable<Long> iterable);
 
     @Override
-    void delete(Buyer buyer);
+    void delete(Long aLong);
 
-
+    Iterable<Buyer> findByFirstName (String firstName);
 }

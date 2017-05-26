@@ -17,5 +17,15 @@
             <li><a href="orders">Order Form</a></li>
         </ul>
     </div>
+    <div>
+        <div>
+        <form th:action="@{/searchBuyer}" th:object="${buyer}" method="get">
+            <table>
+                <td><label>Search Buyers by ID</label></td>
+                <input type="text"/>
+            </table>
+       </form>
+        </div>
+    </div>
 </body>
 </html>

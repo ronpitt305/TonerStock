@@ -7,11 +7,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @Transactional
-public interface ManagerDAO extends CrudRepository<Manager, Integer> {
+public interface ManagerDAO extends CrudRepository<Manager, Long> {
 
     @Override
     Iterable<Manager> findAll();
 
     @Override
-    void delete(Manager manager);
+    void delete(Long aLong);
 }

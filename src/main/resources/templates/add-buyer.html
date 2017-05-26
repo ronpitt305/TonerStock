@@ -44,15 +44,23 @@
                 <td th:text="${buyer.lastName}"></td>
                 <td th:text="${buyer.buyerAddress}"></td>
                 <td>
-                    <form th:action="@{/deleteBuyer}" th:object="${buyer}" method="post">
-                        <input type="hidden" th:field="${buyer}"/>
-                        <input type="button" value="Delete"/>
+                    <form th:action="@{/deleteBuyer/{id}(id=${buyer.buyerId})}" th:object="${buyer}" method="post">
+                        <input type="hidden" th:field="${buyer}">Delete</input>
+                        <button type="submit" onClick="return confirm('Are you sure you want to delete a Manager?')"/>
                     </form>
                 </td>
             </tr>
         </table>
     </div>
 </div>
+    <div>
+        <select>
+            <option th:each="buyer : ${buyers}"
+                    th:text="${buyer.firstName}"
+                    th:value="${buyer.buyerId}"
+            ></option>
+        </select>
+    </div>
 <div>
     <div>
     </div>

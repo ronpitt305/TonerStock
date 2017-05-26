@@ -22,7 +22,7 @@ public class ManagerService {
         return (List<Manager>) managerDAO.findAll();
     }
 
-    public void deleteManager(Manager manager){
-        managerDAO.delete(manager);
+    public void deleteManager(Long along){
+        managerDAO.delete(along);
     }
 }

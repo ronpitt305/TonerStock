@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Title</title>
     <link href="styles.css" rel="stylesheet" type="text/css"/>
@@ -45,6 +45,12 @@
                 <td th:text="${toner.tonerName}"></td>
                 <td th:text="${toner.tonerPrice}"></td>
                 <td th:text="${toner.tonerQuantity}"></td>
+                <td>
+                    <form th:action="@{/deleteToner/{id}(id=${toner.id})}" th:object="${toner}" method="post">
+                        <input type="hidden" th:field="${toner}">Delete</input>
+                        <button type="submit" onclick="return confirm('Are you sure you want')"/>
+                    </form>
+                </td>
             </tr>
         </table>
     </div>

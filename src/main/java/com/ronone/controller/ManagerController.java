@@ -30,6 +30,7 @@ public class ManagerController {
     @GetMapping("/showManagerForm")
     public String addManagerForm(Model model){
         model.addAttribute("manager", new Manager());
+        model.addAttribute("managerId", new Manager().getMid());
         return "add-manager";
     }
 
@@ -40,10 +41,9 @@ public class ManagerController {
         return "redirect:/";
     }
 
-    @PostMapping("/deleteManager")
-    public String deleteManager(@ModelAttribute("manager") Manager manager, Model model){
-        model.addAttribute("manager", new Manager());
-        managerService.deleteManager(manager);
+    @PostMapping("/deleteManager/{id}")
+    public String deleteManager(@PathVariable Long id){
+        managerService.deleteManager(id);
         return "redirect:/";
     }
 }

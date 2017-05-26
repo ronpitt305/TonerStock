@@ -5,10 +5,7 @@ import com.ronone.service.TonerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,6 +30,7 @@ public class StockController {
     @GetMapping("/showStockItem")
     public String addStockItem(@ModelAttribute("toner") Toner toner, Model model){
         model.addAttribute("toner", new Toner());
+        model.addAttribute("tonerId", new Toner().getId());
         return "current-stock";
     }
 
@@ -40,6 +38,12 @@ public class StockController {
     public String saveStockItem(@ModelAttribute("toner") Toner toner, Model model){
         model.addAttribute("toner", new Toner());
         tonerService.saveToner(toner);
+        return "redirect:/";
+    }
+
+    @PostMapping("/deleteToner/{id}")
+    public String deleteStockItem(@PathVariable Long id){
+        tonerService.deleteToner(id);
         return "redirect:/";
     }
 }

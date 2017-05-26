@@ -33,6 +33,7 @@ public class BuyerController {
     @GetMapping("/showBuyerForm")
     public String addBuyerForm(Model model){
         model.addAttribute("buyer", new Buyer());
+        model.addAttribute("buyerId", new Buyer().getBuyerId());
         return "add-buyer";
     }
 
@@ -43,10 +44,10 @@ public class BuyerController {
         return "redirect:/";
     }
 
-    @PostMapping("/deleteBuyer")
-    public String deleteBuyer(@ModelAttribute("buyer") Buyer buyer, Model model){
-        model.addAttribute("buyer", new Buyer());
-        buyerService.deleteBuyer(buyer);
+
+    @PostMapping("/deleteBuyer/{id}")
+    public String deleteBuyer(@PathVariable Long id){
+        buyerService.deleteBuyer(id);
         return "redirect:/";
     }
 

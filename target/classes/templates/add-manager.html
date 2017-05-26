@@ -37,9 +37,9 @@
             <tr th:each="manager : ${managers}">
                 <td th:text="${manager.firstName}"></td>
                 <td th:text="${manager.lastName}"></td>
-                <td><form th:action="@{/deleteManager}" th:object="${manager}" method="post">
-                    <input type="hidden" th:field="${manager}"/>
-                    <input type="button" value="Delete"/>
+                <td><form th:action="@{/deleteManager/{id}(id=${manager.mid})}" th:object="${manager}" method="post">
+                    <input type="hidden" th:field="${manager}">Delete</input>
+                    <button type="submit" onclick="return confirm('Are we ready to delete a manager')"/>
                 </form>
                 </td>
             </tr>

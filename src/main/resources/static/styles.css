@@ -44,3 +44,7 @@ h1 {
     padding-top: 30px;
 
 }
+
+select {
+    width: 180px;
+}

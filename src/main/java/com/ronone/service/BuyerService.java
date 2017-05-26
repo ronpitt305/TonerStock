@@ -10,6 +10,8 @@ import java.util.List;
 @Service
 public class BuyerService {
 
+
+
     @Autowired
     private BuyerDAO buyerDAO;
 
@@ -22,7 +24,12 @@ public class BuyerService {
         return (List<Buyer>) buyerDAO.findAll();
     }
 
-    public void deleteBuyer(Buyer buyer){
-        buyerDAO.delete(buyer);
+    public void deleteBuyer(Long along){
+        buyerDAO.delete(along);
     }
+
+    public Buyer findByBuyerFirstName(String firstName){
+        return (Buyer) buyerDAO.findByFirstName(firstName);
+    }
+
  }

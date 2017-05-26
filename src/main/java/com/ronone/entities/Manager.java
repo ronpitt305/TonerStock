@@ -10,7 +10,7 @@ public class Manager {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @Column(name = "MANG_ID")
-    private int mid;
+    private Long mid;
 
     @Column(name = "FIRST_NAME")
     private String firstName;
@@ -25,6 +25,15 @@ public class Manager {
     public Manager(String firstName, String lastName, Set<Buyer> buyers) {
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public Long getMid() {
+        return mid;
+    }
+
+
+    public void setMid(Long mid) {
+        this.mid = mid;
     }
 
     public String getFirstName() {

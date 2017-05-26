@@ -12,7 +12,7 @@ public class OrderForm {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @Column(name = "OID")
-    private int oid;
+    private Long oid;
 
     @ManyToOne
     @JoinColumn(name = "BUYER_ID")
@@ -36,5 +36,21 @@ public class OrderForm {
                 ", buyer=" + buyer +
                 ", toner=" + toner +
                 '}';
+    }
+
+    public Buyer getBuyer() {
+        return buyer;
+    }
+
+    public void setBuyer(Buyer buyer) {
+        this.buyer = buyer;
+    }
+
+    public List<Toner> getToner() {
+        return toner;
+    }
+
+    public void setToner(List<Toner> toner) {
+        this.toner = toner;
     }
 }

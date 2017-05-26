@@ -22,4 +22,8 @@ public class TonerService {
 
         return (List<Toner>) tonerDAO.findAll();
     }
+
+    public void deleteToner(Long id){
+        tonerDAO.delete(id);
+    }
 }
