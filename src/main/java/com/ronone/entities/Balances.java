@@ -3,6 +3,7 @@ package com.ronone.entities;
 import javax.persistence.*;
 
 @Entity
+@Table(schema = "toner_balance")
 public class Balances {
 
     @Id
@@ -25,6 +26,16 @@ public class Balances {
     public Balances(Long accountBalance, Long amountPaid) {
         this.accountBalance = accountBalance;
         this.amountPaid = amountPaid;
+    }
+
+    @Override
+    public String toString() {
+        return "Balances{" +
+                "transNumber=" + transNumber +
+                ", accountBalance=" + accountBalance +
+                ", amountPaid=" + amountPaid +
+                ", buyer=" + buyer +
+                '}';
     }
 
     public Long getTransNumber() {

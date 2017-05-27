@@ -22,9 +22,6 @@ public class Buyer {
     @Column(name = "BUYER_ADDRESS")
     private String buyerAddress;
 
-    @OneToMany(targetEntity = OrderForm.class,cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "buyer")
-    private List<OrderForm> orders;
-
     @OneToOne
     @JoinColumn(name = "TRANS_NUMBER")
     private Balances balances;
@@ -37,6 +34,14 @@ public class Buyer {
         this.buyerAddress = buyerAddress;
     }
 
+
+    public Balances getBalances() {
+        return balances;
+    }
+
+    public void setBalances(Balances balances) {
+        this.balances = balances;
+    }
 
     public Long getBuyerId() {
         return buyerId;

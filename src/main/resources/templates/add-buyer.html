@@ -14,7 +14,6 @@
         <li><a href="add-manager">Add Manager</a></li>
         <li><a href="current-stock">Current Stock</a></li>
         <li><a href="transactions">Transactions</a></li>
-        <li><a href="orders">Order Form</a></li>
     </ul>
 </div>
 
@@ -38,11 +37,22 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Address</th>
+                <th>Select Toner</th>
+                <th>Current Balance</th>
             </tr>
             <tr th:each="buyer : ${buyers}">
                 <td th:text="${buyer.firstName}"></td>
                 <td th:text="${buyer.lastName}"></td>
                 <td th:text="${buyer.buyerAddress}"></td>
+                <td>
+                <select>
+                    <option th:each="toner : ${toners}"
+                            th:text="${toner.tonerName}"
+                            th:value="${toner.id}">
+                    </option>
+                </select>
+                </td>
+                <td th:text="${buyer.balances}"></td>
                 <td>
                     <form th:action="@{/deleteBuyer/{id}(id=${buyer.buyerId})}" th:object="${buyer}" method="post">
                         <input type="hidden" th:field="${buyer}">Delete</input>
