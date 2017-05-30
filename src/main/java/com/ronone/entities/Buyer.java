@@ -1,11 +1,10 @@
 package com.ronone.entities;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(schema = "toner_buyer")
+@Table(schema = "toner_buyer", name = "buyer")
 public class Buyer {
 
     @Id
@@ -22,18 +21,38 @@ public class Buyer {
     @Column(name = "BUYER_ADDRESS")
     private String buyerAddress;
 
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "TONER_ID")
+    private Set<Toner> toners;
+
     @OneToOne
     @JoinColumn(name = "TRANS_NUMBER")
     private Balances balances;
 
     public Buyer(){}
 
-    public Buyer(String firstName, String lastName, String buyerAddress, Set<Toner> buyerToner) {
+    public Buyer(String firstName, String lastName, String buyerAddress) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.buyerAddress = buyerAddress;
     }
 
+    public Buyer(String firstName, String lastName, String buyerAddress, Set<Toner> toners, Balances balances) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.buyerAddress = buyerAddress;
+        this.toners = toners;
+        this.balances = balances;
+    }
+
+    public Set<Toner> getToners() {
+        return toners;
+    }
+
+    public void setToners(Set<Toner> toners) {
+        this.toners = toners;
+    }
 
     public Balances getBalances() {
         return balances;

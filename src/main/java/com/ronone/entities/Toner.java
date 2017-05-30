@@ -20,6 +20,9 @@ public class Toner {
     @Column(name = "TONER_QUANTITY")
     private int tonerQuantity;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "BUYER_ID")
+    private Buyer buyer;
 
     public Toner(){}
 
@@ -41,6 +44,14 @@ public class Toner {
                 ", tonerPrice=" + tonerPrice +
                 ", tonerQuantity=" + tonerQuantity +
                 '}';
+    }
+
+    public Buyer getBuyer() {
+        return buyer;
+    }
+
+    public void setBuyer(Buyer buyer) {
+        this.buyer = buyer;
     }
 
     public Long getId() {

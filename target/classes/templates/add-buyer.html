@@ -39,6 +39,9 @@
                 <th>Address</th>
                 <th>Select Toner</th>
                 <th>Current Balance</th>
+                <th>Delete Buyer</th>
+                <th>Purchase Item</th>
+                <th>Sale Item</th>
             </tr>
             <tr th:each="buyer : ${buyers}">
                 <td th:text="${buyer.firstName}"></td>
@@ -59,20 +62,20 @@
                         <button type="submit" onClick="return confirm('Are you sure you want to delete a Manager?')"/>
                     </form>
                 </td>
+                <td>
+                    <form th:action="@{/purcahseToner/{toner}(toner=${buyer.toners})}" th:object="${buyer}" method="post">
+                        <input type="hidden" th:field="*{toners}">Purchase</input>
+                        <button type="submit" onclick="return confirm('Are you sure you want to make this purchase?')"/>
+                    </form>
+                </td>
+                <td>
+                    <form th:action="@{/saleToner/{toner}(toner=${buyer.toners})}" th:object="${buyer}" method="post">
+                        <input type="hidden" th:field="*{toners}">Sale</input>
+                        <button type="submit" onclick="return confirm('Are you sure you want to sale this?')"/>
+                    </form>
+                </td>
             </tr>
         </table>
-    </div>
-</div>
-    <div>
-        <select>
-            <option th:each="buyer : ${buyers}"
-                    th:text="${buyer.firstName}"
-                    th:value="${buyer.buyerId}"
-            ></option>
-        </select>
-    </div>
-<div>
-    <div>
     </div>
 </div>
 

@@ -20,6 +20,7 @@ public class BuyerService {
         return Buyer;
     }
 
+
     public List<Buyer> findAllBuyers(){
         return (List<Buyer>) buyerDAO.findAll();
     }

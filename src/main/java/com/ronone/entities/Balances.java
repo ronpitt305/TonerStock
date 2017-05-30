@@ -11,14 +11,14 @@ public class Balances {
     @Column(name = "TRANS_NUMBER")
     private Long transNumber;
 
+    @OneToOne(targetEntity = Buyer.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Buyer buyer;
+
     @Column(name = "ACCOUNT_BALANCE")
     private Long accountBalance;
 
     @Column(name = "AMOUNT_PAID")
     private Long amountPaid;
-
-    @OneToOne(targetEntity = Buyer.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "balances")
-    private Buyer buyer;
 
     public Balances() {
     }
@@ -34,7 +34,7 @@ public class Balances {
                 "transNumber=" + transNumber +
                 ", accountBalance=" + accountBalance +
                 ", amountPaid=" + amountPaid +
-                ", buyer=" + buyer +
+                ", buyer=" + //buyer +
                 '}';
     }
 
@@ -60,5 +60,13 @@ public class Balances {
 
     public void setAmountPaid(Long amountPaid) {
         this.amountPaid = amountPaid;
+    }
+
+    public Buyer getBuyer() {
+        return buyer;
+    }
+
+    public void setBuyer(Buyer buyer) {
+        this.buyer = buyer;
     }
 }

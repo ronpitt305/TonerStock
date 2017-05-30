@@ -12,7 +12,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 public class BuyerController {
@@ -38,7 +40,7 @@ public class BuyerController {
         model.addAttribute("buyers", buyers);
         model.addAttribute("toners", toners);
 
-        //to name
+        //creating objects in view
         model.addAttribute("buyer", new Buyer());
         model.addAttribute("toner", new Toner());
         return "add-buyer";
@@ -59,10 +61,22 @@ public class BuyerController {
         return "redirect:/";
     }
 
-
     @PostMapping("/deleteBuyer/{id}")
     public String deleteBuyer(@PathVariable Long id){
         buyerService.deleteBuyer(id);
+        return "redirect:/";
+    }
+
+    @PostMapping("/purcahseToner/{toner}")
+    public String buyToner(@PathVariable Toner toner){
+        Buyer buyer = new Buyer();
+
+        return "redirect:/";
+    }
+
+    @PostMapping("/saleToner/{toner}")
+    public String saleToner(){
+
         return "redirect:/";
     }
 

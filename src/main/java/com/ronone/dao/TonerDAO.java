@@ -17,4 +17,7 @@ public interface TonerDAO extends CrudRepository<Toner, Long> {
 
     @Override
     void delete(Long aLong);
+
+    @Override
+    Toner findOne(Long aLong);
 }
