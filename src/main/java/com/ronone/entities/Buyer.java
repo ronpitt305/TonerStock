@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(schema = "toner_buyer", name = "buyer")
+@Table(schema = "toner_buyer")
 public class Buyer {
 
     @Id
@@ -21,29 +21,29 @@ public class Buyer {
     @Column(name = "BUYER_ADDRESS")
     private String buyerAddress;
 
+    @Column(name = "BUYER_BALANCE")
+    private int balance;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "TONER_ID")
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "buyer")
     private Set<Toner> toners;
 
-    @OneToOne
-    @JoinColumn(name = "TRANS_NUMBER")
-    private Balances balances;
 
     public Buyer(){}
 
-    public Buyer(String firstName, String lastName, String buyerAddress) {
+    public Buyer(String firstName, String lastName, String buyerAddress, int balance) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.buyerAddress = buyerAddress;
+        this.balance = balance;
     }
 
-    public Buyer(String firstName, String lastName, String buyerAddress, Set<Toner> toners, Balances balances) {
+    public Buyer(String firstName, String lastName, String buyerAddress, int balance, Set<Toner> toners) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.buyerAddress = buyerAddress;
+        this.balance = balance;
         this.toners = toners;
-        this.balances = balances;
     }
 
     public Set<Toner> getToners() {
@@ -52,14 +52,6 @@ public class Buyer {
 
     public void setToners(Set<Toner> toners) {
         this.toners = toners;
-    }
-
-    public Balances getBalances() {
-        return balances;
-    }
-
-    public void setBalances(Balances balances) {
-        this.balances = balances;
     }
 
     public Long getBuyerId() {
@@ -92,6 +84,14 @@ public class Buyer {
 
     public void setBuyerAddress(String buyerAddress) {
         this.buyerAddress = buyerAddress;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
     }
 
 }

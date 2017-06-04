@@ -16,22 +16,22 @@
         <li><a href="transactions">Transactions</a></li>
     </ul>
 </div>
-    <div id="display-table" align="center">
-        <form th:action="@{/addBalance}" th:object="${balance}" width="100%" method="post">
-            <table>
-                <td><label>Select Buyer to add funds</label></td>
-                <td><select>
-                    <option th:each="buyer : ${buyers}"
-                            th:text="${buyer.firstName}"
-                            th:value="${buyer.buyerId}">
-                    </option>
-                    </select></td>
-                <td><label>Add funds</label></td>
-                <td><input type="text" th:field="*{accountBalance}"/></td>
-                <td><input type="submit" value="Add Funds"/></td>
-            </table>
-        </form>
-    </div>
+        <div id="display-table" align="center">
+            <form th:action="@{/addBalance}" th:object="${balance}" width="100%" method="post">
+                <table>
+                    <th><label>Select Buyer to add funds</label></th>
+                    <th><select th:field="*{buyer}">
+                        <option th:each="buyer : ${buyers}"
+                                th:text="${buyer.firstName}"
+                                th:value="${buyer.buyerId}">
+                        </option>
+                    </select></th>
+                    <th>Enter Account Balance</th>
+                    <th><input type="text" th:field="*{accountBalance}"/></th>
+                    <th><input type="submit" value="Add Funds"/></th>
+                </table>
+            </form>
+        </div>
 <div>
     <div>
         <table id="info-table" align="center" border="1">
@@ -39,13 +39,11 @@
                 <th>Transaction Number</th>
                 <th>Buyer</th>
                 <th>Account Balance</th>
-                <th>Account Paid</th>
             </tr>
             <tr th:each="balance : ${balances}">
                 <td th:text="${balance.transNumber}"></td>
-                <td th:text="${balance.buyer}"></td>
+                <td th:text="${foundBuyer}"></td>
                 <td th:text="${balance.accountBalance}"></td>
-                <td th:text="${balance.amountPaid}"></td>
                 <td>
                     <form th:action="@{/deleteBalance/{id}(id=${balance.transNumber})}" th:object="${balance}" method="post">
                         <input type="hidden" th:field="${balance}">Delete</input>

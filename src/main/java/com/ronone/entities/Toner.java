@@ -1,14 +1,17 @@
 package com.ronone.entities;
 
+import org.hibernate.id.UUIDGenerator;
+
 import javax.persistence.*;
+import java.util.UUID;
 
 @Entity
 @Table(schema = "toner_stock")
 public class Toner {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "TONER_ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "TONER_NAME")

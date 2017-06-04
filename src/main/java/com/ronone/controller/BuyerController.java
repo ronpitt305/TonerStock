@@ -67,10 +67,22 @@ public class BuyerController {
         return "redirect:/";
     }
 
-    @PostMapping("/purcahseToner/{toner}")
-    public String buyToner(@PathVariable Toner toner){
-        Buyer buyer = new Buyer();
+    @PostMapping("/addToBuyerBal/{id}")
+    public String addToBuyerBalance(Model model, @PathVariable Long id, @RequestParam("add") int add){
+        int num = add;
+        Buyer mBuyer = buyerService.findOne(id);
+        mBuyer.setBalance(mBuyer.getBalance() + num);
+        buyerService.saveBuyer(mBuyer);
+        model.addAttribute("add", add);
+        return "redirect:/";
 
+
+    }
+
+    @PostMapping("/purcahseToner/{id}")
+    public String buyToner(Model model, @PathVariable Long id, @ModelAttribute("toner") Toner toner){
+        Buyer mBuyer = buyerService.findOne(id);
+        Toner mToner = tonerService.saveToner(toner);
         return "redirect:/";
     }
 
@@ -79,6 +91,4 @@ public class BuyerController {
 
         return "redirect:/";
     }
-
-
 }

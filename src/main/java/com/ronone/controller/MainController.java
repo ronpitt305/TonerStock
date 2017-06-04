@@ -29,7 +29,6 @@ public class MainController {
 
     @PostMapping("/foundBuyer")
     public String foundBuyer(@ModelAttribute("buyer") String buyerName, Model model){
-        buyerService.findByBuyerFirstName(buyerName);
         model.addAttribute("buyer", new Buyer());
         return "home-page";
     }

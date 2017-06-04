@@ -4,10 +4,12 @@ import com.ronone.dao.BuyerDAO;
 import com.ronone.entities.Buyer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional
 public class BuyerService {
 
 
@@ -29,8 +31,9 @@ public class BuyerService {
         buyerDAO.delete(along);
     }
 
-    public Buyer findByBuyerFirstName(String firstName){
-        return (Buyer) buyerDAO.findByFirstName(firstName);
+    public Buyer findOne(Long id){
+        return buyerDAO.findOne(id);
     }
+
 
  }
