@@ -1,34 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e669b5a1-748d-4262-97a6-6f607ec646dc" name="Default" comment="-- working on buyer">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/ronone/controller/BalanceController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/ronone/dao/BalanceDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/ronone/entities/Balances.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/ronone/service/BalanceService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/ronone/controller/BalanceController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/ronone/dao/BalanceDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/ronone/entities/Balances.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/ronone/service/BalanceService.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/ronone/controller/BuyerController.class" afterPath="$PROJECT_DIR$/target/classes/com/ronone/controller/BuyerController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/ronone/controller/MainController.class" afterPath="$PROJECT_DIR$/target/classes/com/ronone/controller/MainController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/ronone/dao/BuyerDAO.class" afterPath="$PROJECT_DIR$/target/classes/com/ronone/dao/BuyerDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/ronone/entities/Buyer.class" afterPath="$PROJECT_DIR$/target/classes/com/ronone/entities/Buyer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/ronone/entities/Toner.class" afterPath="$PROJECT_DIR$/target/classes/com/ronone/entities/Toner.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/ronone/service/BuyerService.class" afterPath="$PROJECT_DIR$/target/classes/com/ronone/service/BuyerService.class" />
+    <list default="true" id="e669b5a1-748d-4262-97a6-6f607ec646dc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ronone/controller/BuyerController.java" afterPath="$PROJECT_DIR$/src/main/java/com/ronone/controller/BuyerController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ronone/controller/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/com/ronone/controller/MainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ronone/dao/BuyerDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/ronone/dao/BuyerDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ronone/entities/Buyer.java" afterPath="$PROJECT_DIR$/src/main/java/com/ronone/entities/Buyer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ronone/entities/Toner.java" afterPath="$PROJECT_DIR$/src/main/java/com/ronone/entities/Toner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ronone/service/BuyerService.java" afterPath="$PROJECT_DIR$/src/main/java/com/ronone/service/BuyerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/styles.css" afterPath="$PROJECT_DIR$/src/main/resources/static/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/add-buyer.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/add-buyer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/balances.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/balances.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/styles.css" afterPath="$PROJECT_DIR$/target/classes/static/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/add-buyer.html" afterPath="$PROJECT_DIR$/target/classes/templates/add-buyer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/balances.html" afterPath="$PROJECT_DIR$/target/classes/templates/balances.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -827,12 +801,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496082615347</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="-- Added a way for buyer to have balances&#10;-- balances automatically add to mysql workbench">
+      <created>1496614577784</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1496614577784</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="735" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -844,7 +824,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -898,7 +878,8 @@
     <MESSAGE value="-Added Delete button&#10;- Working on balance entity" />
     <MESSAGE value="-- User can now select Toner" />
     <MESSAGE value="-- working on buyer" />
-    <option name="LAST_COMMIT_MESSAGE" value="-- working on buyer" />
+    <MESSAGE value="-- Added a way for buyer to have balances&#10;-- balances automatically add to mysql workbench" />
+    <option name="LAST_COMMIT_MESSAGE" value="-- Added a way for buyer to have balances&#10;-- balances automatically add to mysql workbench" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
