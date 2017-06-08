@@ -5,9 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/ronone/controller/BuyerController.class" afterPath="$PROJECT_DIR$/target/classes/com/ronone/controller/BuyerController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/ronone/service/TonerService.class" afterPath="$PROJECT_DIR$/target/classes/com/ronone/service/TonerService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ronone/controller/BuyerController.java" afterPath="$PROJECT_DIR$/src/main/java/com/ronone/controller/BuyerController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ronone/service/TonerService.java" afterPath="$PROJECT_DIR$/src/main/java/com/ronone/service/TonerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/add-buyer.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/add-buyer.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/add-buyer.html" afterPath="$PROJECT_DIR$/target/classes/templates/add-buyer.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -726,7 +723,14 @@
       <option name="project" value="LOCAL" />
       <updated>1496614577784</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="-- Adding multiple objects.">
+      <created>1496886389073</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1496886389073</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -797,7 +801,8 @@
     <MESSAGE value="-- User can now select Toner" />
     <MESSAGE value="-- working on buyer" />
     <MESSAGE value="-- Added a way for buyer to have balances&#10;-- balances automatically add to mysql workbench" />
-    <option name="LAST_COMMIT_MESSAGE" value="-- Added a way for buyer to have balances&#10;-- balances automatically add to mysql workbench" />
+    <MESSAGE value="-- Adding multiple objects." />
+    <option name="LAST_COMMIT_MESSAGE" value="-- Adding multiple objects." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
