@@ -8,10 +8,12 @@ import com.ronone.service.TonerService;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -29,7 +31,10 @@ public class BuyerController {
         this.buyerService = buyerService;
     }
 
-    @RequestMapping("/add-buyer")
+    Toner mToner = new Toner();
+    Buyer mBuyer = new Buyer();
+
+    @GetMapping("/add-buyer")
     public String showBuyerPager(Model model){
 
         //List
@@ -79,10 +84,23 @@ public class BuyerController {
 
     }
 
-    @PostMapping("/purcahseToner/{id}")
-    public String buyToner(Model model, @PathVariable Long id, @ModelAttribute("toner") Toner toner){
-        Buyer mBuyer = buyerService.findOne(id);
-        Toner mToner = tonerService.saveToner(toner);
+    @PostMapping("/purchaseToner/{tid}")
+    public String buyToner(Model model, @PathVariable("tid") Long tid){
+
+
+        mToner = tonerService.findOneToner(tid);
+        mToner.setTonerQuantity(mToner.getTonerQuantity() - 1);
+        return "redirect:/";
+    }
+
+    @PostMapping("/setTonerToBuyer/{bid}")
+    public String setTonerToBuyer(Model model, @PathVariable("bid") Long bid){
+
+        mBuyer = buyerService.findOne(bid);
+        mBuyer.setBalance(mBuyer.getBalance() - mToner.getTonerPrice());
+        mBuyer.getToners().add(mToner);
+        System.out.println(mBuyer.getToners());
+
         return "redirect:/";
     }
 
@@ -91,4 +109,5 @@ public class BuyerController {
 
         return "redirect:/";
     }
+
 }

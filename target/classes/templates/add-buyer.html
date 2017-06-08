@@ -27,6 +27,7 @@
                <td><label>Enter Address: </label></td>
                <td><input type="text" th:field="*{buyerAddress}"/></td>
                <td><input type="submit" value="save"/></td>
+               <td><input type="reset" value="reset"/></td>
            </table>
        </form>
     </div>
@@ -36,11 +37,11 @@
             <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
-                <th>Address</th>
-                <th>Select Toner</th>
+                <th>Email</th>
                 <th>Current Balance</th>
                 <th>Add to Balance</th>
                 <th>Delete Buyer</th>
+                <th>Select Toner</th>
                 <th>Purchase Item</th>
                 <th>Sale Item</th>
             </tr>
@@ -48,19 +49,11 @@
                 <td th:text="${buyer.firstName}"></td>
                 <td th:text="${buyer.lastName}"></td>
                 <td th:text="${buyer.buyerAddress}"></td>
-                <td>
-                <select>
-                    <option th:each="toner : ${toners}"
-                            th:text="${toner.tonerName}"
-                            th:value="${toner.id}">
-                    </option>
-                </select>
-                </td>
                 <td th:text="${buyer.balance}"></td>
                 <td>
                     <form th:action="@{/addToBuyerBal/{id}(id=${buyer.buyerId})}" th:object="${buyer}" name="add" method="post">
                         <input type="text" name="add"/>
-                        <input type="submit" value="add funds" onclick="return confirm('Are you sure you want to add ${add}')"/>
+                        <input type="submit" value="add funds" onclick="return confirm('Are you sure you want to make that purchase')"/>
                     </form>
                 </td>
                 <td>
@@ -70,10 +63,21 @@
                     </form>
                 </td>
                 <td>
-                    <form th:action="@{/purcahseToner/{toner}(toner=${buyer.toners})}" th:object="${buyer}" method="post">
-                        <input type="hidden" th:field="*{toners}">Purchase</input>
-                        <button type="submit" onclick="return confirm('Are you sure you want to make this purchase?')"/>
+                    <form th:action="@{/purchaseToner/{tid}(tid=${toner.id})}" th:object="${toner}" method="post">
+                    <select>
+                        <option>Select a Toner</option>
+                        <option th:each="tonerz : ${toners}"
+                                th:text="${tonerz.tonerName}"
+                                th:value="${tonerz.id}">
+                        </option>
+                    </select>
                     </form>
+                </td>
+                <td>
+                <form th:action="@{/setTonerToBuyer/{bid}(bid=${buyer.buyerId})}" th:object="${buyer}" method="post">
+                    <input type="hidden" th:field="${buyer}"/>
+                    <input type="submit" value="Buy Toner"/>
+                </form>
                 </td>
                 <td>
                     <form th:action="@{/saleToner/{toner}(toner=${buyer.toners})}" th:object="${buyer}" method="post">

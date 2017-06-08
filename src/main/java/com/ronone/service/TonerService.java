@@ -27,9 +27,7 @@ public class TonerService {
         tonerDAO.delete(id);
     }
 
-    public void purchaseToner(Long id){
-        Toner boughtToner = tonerDAO.findOne(id);
-        boughtToner.setTonerQuantity(boughtToner.getTonerQuantity()-1);
-
+    public Toner findOneToner(Long id){
+        return tonerDAO.findOne(id);
     }
 }
